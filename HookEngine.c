@@ -1,3 +1,4 @@
+#include <linux/slab.h>
 #include "HookEngine.h"
 
 #define __CLEAR_WP__
@@ -5,7 +6,7 @@
 #ifdef __CLEAR_WP__
 #define X86_CR0_WP 0x00010000
 
-static unsigned long __force_order;
+unsigned long __force_order;
 
 static inline unsigned long readCr0(void) {
 
